@@ -82,7 +82,7 @@ cd spring-petclinic-rest
 ```
 You can then access petclinic here: http://localhost:9966/petclinic/
 
-mvn clean install
+![Swagger screenshot](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/d286a474e68624e7801d34cff7d92c54ba1583e3/02-setup-local-env-backend/screenshot_backend.png)
 
 # Build Lifecycle <a name="build_lifecycle"></a>
 
