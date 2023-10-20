@@ -96,7 +96,7 @@ You can see current dependencies in package.json file.
 **Development server**
 Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-SLIKA
+![Angular](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/1925ed42c33d374c149dfcbdd3b03d1fb170456b/03-setup-local-env-frontend/screenshot_angular.png)
 
 
 # Build Lifecycle <a name="build_lifecycle"></a>
