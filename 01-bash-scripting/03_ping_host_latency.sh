@@ -5,7 +5,6 @@ if [ $# -ne 1 ]; then
     exit 1
 fi
 
-latency=$(curl --silent --output /dev/null -w "%{time_total}\n" "$1")
+latency="$(curl --silent -w "Latency for '$1' is %{time_total} seconds" "$1")"
 
-echo "Latency for '$1' is $latency seconds"
-
+echo "$latency"

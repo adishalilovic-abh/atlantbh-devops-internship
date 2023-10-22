@@ -7,8 +7,8 @@ domains=(
     )
 
 for domain in "${domains[@]}"; do
-  result=$(dig "$domain")
+  result="$(dig "$domain")"
 
-  resolution_time=$(echo "$result" | grep "Query time:" | awk '{print $4}')
+  resolution_time="$(echo "$result" | grep "Query time:" | awk '{print $4}')"
   echo "DNS resolution time for $domain: ${resolution_time}ms"
 done

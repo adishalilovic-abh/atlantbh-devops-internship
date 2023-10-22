@@ -9,7 +9,7 @@ websites=(
 )
 
 for website in "${websites[@]}"; do
-    if curl --output /dev/null --silent --head --fail "$website"; then
+    if curl --silent --head --fail "$website"; then
         echo "$website is UP"
     else
         echo "$website is DOWN"

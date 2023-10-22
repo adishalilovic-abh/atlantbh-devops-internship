@@ -11,6 +11,8 @@
 
 
 # Notes
+- [Shell style guide](https://google.github.io/styleguide/shellguide.html)
+- Always quote strings containing variables, command substitutions, spaces or shell meta characters, unless careful unquoted expansion is required or it’s a shell-internal integer (see next point).
 - $# - special variable that represents the number of command-line arguments
 - "$@" - special variable that represents all the command-line arguments passed to a script or function. It is often used to reference multiple arguments as a list.
 - "${websites[@]}" - used to expand an array called websites into a list of elements, where each element is enclosed in double quotes; often used when you want to work with array elements that may contain spaces or other special characters
@@ -19,6 +21,9 @@
 - awk '{print $4}' - used to extract and print the fourth field (column) from each line of input data
 - cut -d '%' -f 1 - splits each line of input text using the '%' character as the delimiter and then print the first field (part) of each split line.
 - vm_stat - macOS command-line utility that provides detailed information about virtual memory statistics on your system
+- There is no need in using --output /dev/null together with --silent.
+--silent flag will not show any output, as you mentioned here: "curl will be mute".
+--output is more used when you need to save something, for example like downloading a file.
 
 ## Curl
 --output /dev/null OR -o /dev/null # stdout redirected to /dev/null which discards any data that is written to it and reports back that the write operation is successful
