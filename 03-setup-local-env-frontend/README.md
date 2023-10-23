@@ -14,7 +14,14 @@ Clone [spring-petclinic-angular](https://github.com/spring-petclinic/spring-petc
 [How to install Angular on macOS](https://kinsta.com/knowledgebase/install-angular/#how-to-install-angular-on-macos)
 
 **1. Install Node.js and npm (If Not Already Installed)**
-Download and install Node.js from following url: https://nodejs.org/en. 
+
+[Official Node.js website](https://nodejs.org/en)
+
+Install Node.js and npm via brew:
+```
+brew install node
+```
+
 Check your current Node and npm versions:
 ```
 $ node -v 
@@ -22,12 +29,14 @@ $ npm -v
 ```
 
 **2. Install Angular CLI Globally**
+
 Just as with the Windows instructions, you need to next install/update Angular CLI, which is what you need to create (and manage) Angular applications. To do this, open the Terminal and run the following commands:
 
 ```
 npm uninstall -g angular-cli @angular/cli
-npm cache clean
-npm install -g @angular/cli@latest #or npm install -g @angular/cli
+npm cache verify
+npm cache clean --force #if needed
+npm install -g @angular/cli@latest 
 ```
 <details>
   <summary>Error</summary>
@@ -63,7 +72,7 @@ Set the directory owner of /usr/local/lib/node_modules/ to root. Execute below c
 $ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}`
 ```
 
-**3. Test Angular Installed Correctly**
+**3. Test Angular Installed Correctly**  
 After installing the Angular CLI, you can utilize its commands for managing Angular projects. To confirm a successful installation, run the subsequent command in the Terminal:
 ```
 ng --version
@@ -81,11 +90,13 @@ ng version
 Warning: **client only**. Use REST API from backend [spring-petclinic-rest](https://github.com/spring-petclinic/spring-petclinic-rest) project. You need start backend server before start frontend application.
 
 **Clone project from github:**
+
 ```
 git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
 ```
 
 **Install local project package:**
+
 ```
 npm install --save-dev @angular/cli@latest
 if npm version > 5.0 delete package-lock.json file  #(bug in npm 5.0 - this file prevent correct packages install)
@@ -94,6 +105,7 @@ npm install
 You can see current dependencies in package.json file.
 
 **Development server**
+
 Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ![Angular](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/1925ed42c33d374c149dfcbdd3b03d1fb170456b/03-setup-local-env-frontend/screenshot_angular.png)
