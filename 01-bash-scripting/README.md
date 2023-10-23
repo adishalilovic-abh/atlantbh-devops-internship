@@ -3,7 +3,7 @@
 
 02 Write a script that tests connectivity to a list of websites and reports the status
 
-03 Write a script that pings a host and reports latenc
+03 Write a script that pings a host and reports latency
  
 04 Write a script that traces the path of a network packet from the source to a destination
 
