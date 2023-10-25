@@ -3,7 +3,8 @@
 # Table of contents
 1. [Task description](#task)
 2. [Check PostgreSQL Dependency](#postgresql_dependency)
-2. [Database configuration](#db_config)
+3. [Database configuration](#db_config)
+4. [Screenshots](#screenshots)
 
 ## Task <a name="task"></a>
 Deploy Backend with PostgreSQL integration.
@@ -69,11 +70,21 @@ Needed to set ddl-auto to update:
 spring.jpa.hibernate.ddl-auto=update
 ```
 
+## Screenshots <a name="screenshots"></a>
+
 <details>
 <summary>Screenshots</summary>
 
-01
-02
-...
+Select query in psql on table 'specialties':  
+![01](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/01_screenshot_db_select_before.png)
 
+Executed POST method in Swagger:  
+![02](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/02_screenshot_post_1.png)
+![03](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/03_screenshot_post_2.png)
+
+Status code after executions:  
+![04](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/04_screenshot_post_status_code.png)
+
+Select query in psql on table 'specialties' after executions:  
+![05](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/05_screenshot_db_select_after.png)
 </details>
