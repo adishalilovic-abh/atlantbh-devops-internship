@@ -3,11 +3,10 @@
 ## Task
 Variables like hostname, username and password often need to be changed. Configure frontend and backend apps to use environment variables for REST_API_URL, Postgres datasource.url, username and password
 
-Fork/clone frontend and backend repositories and make changes (including changes in future tasks) in these repositories.
+Fork/clone [frontend](https://github.com/spring-petclinic/spring-petclinic-angular) and [backend](https://github.com/spring-petclinic/spring-petclinic-rest) repositories and make changes (including changes in future tasks) in these repositories.
 
 ## Environment variable
 
-Source:
 - [What Is an Environment Variable?](https://kinsta.com/knowledgebase/what-is-an-environment-variable/)
 - [An Introduction to Environment Variables and How to Use Them](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa)
 
@@ -81,7 +80,7 @@ In our example:
 ```
 //.env
 #Environment variables for spring-petclinic-rest
-DATABASE=jdbc:postgresql://localhost:5432/db_name
+DATABASE=postgres_datasource.url
 USERNAME=my_username
 PASSWORD=my_password
 ```
