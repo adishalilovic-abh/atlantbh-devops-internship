@@ -158,6 +158,7 @@
             <artifactId>jaxb-api</artifactId>
             <version>${jaxb-api.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
