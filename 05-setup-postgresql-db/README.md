@@ -1,25 +1,16 @@
 # Setup PostgreSQL database
 
-# Table of contents 
-1. [Task description](#task)
-2. [Install PostgreSQL](#install_psql)
-3. [PostgreSQL service](#postgresql_service)
-4. [psql](#psql)
-5. [psql basics](#psql_basics)
-6. [SQL basics](#sql)
-
-## Task <a name="task"></a>
+## Task
 [Spring petclinic rest app](https://github.com/spring-petclinic/spring-petclinic-rest) uses in memory storage by default. There is option to persist data beyond restarts using database. Create local PostgreSQL database which will be used for data persistence.
 
-## Install PostgreSQL <a name="install_psql"></a>
+## Install PostgreSQL
 
-If you haven't already, download and install PostgreSQL on your local machine. You can get the latest version from the [official PostgreSQL website](https://www.postgresql.org/download/).
+If you haven't already, download and install PostgreSQL on your local machine. You can get the latest version from the [official PostgreSQL website](https://www.postgresql.org/download/) or you can use homebrew:
 
 ```
 $ brew update #update Homebrew to ensure you have the latest package information
-$ brew install postgresql@16
+$ brew install postgresql@16 #check whichh version is last
 ```
-
 
 <details>
   <summary>Message after installation:</summary>
@@ -53,7 +44,7 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 </details>
 <br>
 
-If you need to have postgresql@16 first in your PATH, run:
+If you need to have `postgresql@16` first in your `PATH`, run:
 ```
 $ echo 'export PATH="/usr/local/opt/postgresql@16/bin:$PATH"' >> /Users/adinpilavdzija/.bash_profile
 ```
@@ -65,22 +56,21 @@ $ brew list | grep postgres #check if postgres is installed or not
 $ postgres --version
 ```
 
-## PostgreSQL service <a name="postgresql_service"></a>
+## PostgreSQL service
 
-Start the PostgreSQL service:
+We must initiate the PostgreSQL service to establish communication with the backend. Start the PostgreSQL service with following command:
 ```
 $ brew services start postgresql@16
 ```
 
-Stop the PostgreSQL service:
+When shutting down the application, it's necessary to stop the service. Stop the PostgreSQL service with following command:
 ```
 $ brew services stop postgresql@16
 ```
 
-## psql <a name="psql"></a>
+## psql
 
 When you get a connection to PostgreSQL it is always to a particular database. To access a different database, you must get a new connection.
-
 ```
 $ psql postgres #connects to the PostgreSQL database named postgres
 ```
@@ -95,11 +85,24 @@ Create user:
 $ CREATE USER adinp WITH PASSWORD 'pass123';
 ```
 
-If user is not superuser, application fail to build.
+Our user is missing necessary permissions for interaction with our database. **It is not good idea to give superuser privileges to user** because most users should be granted appropriate permissions and roles based on the principle of least privilege. This means that users should only be given the minimum necessary permissions to perform their tasks, reducing the risk of accidental or malicious actions. You can use SQL commands like GRANT and REVOKE to manage user permissions and assign roles to users. 
 
-Grant superuser privileges to a user:
+For performing CRUD operations (Create, Read, Update, Delete) in a PostgreSQL database, users typically need the following permissions on the relevant database objects:
+- CREATE (for Create): Users need INSERT permission to add new records to a table. This allows them to create new rows in a table.
+- READ (for Read): Users need SELECT permission to retrieve data from a table. This allows them to read (query) the data in the table.
+- UPDATE (for Update): Users need UPDATE permission to modify existing re
+- DELETE (for Delete): Users need DELETE permission to remove records from a table. This allows them to delete rows from a table.
+- In addition to these permissions on tables, users may need permissions on sequences (for auto-incrementing primary keys) and any other database objects that are involved in the CRUD operations, such as views, stored procedures, or triggers. Auto-incrementing primary keys are often implemented using serial or bigserial data types, which are linked to sequences.
+
 ```
-$ ALTER USER adinp WITH SUPERUSER;
+GRANT CONNECT ON DATABASE petclinic TO adinp;
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON owners, pets, roles, specialties, types, users, vet_specialties, vets, visits TO adinp;
+```
+
+Executing the `psql` command `\ds` provides a list of relations, including sequences. Grant pemission on sequences with following command:
+```
+GRANT USAGE, SELECT ON SEQUENCE types_id_seq, owners_id_seq, pets_id_seq, roles_id_seq, specialties_id_seq, types_id_seq, vets_id_seq, visits_id_seq TO adinp;
 ```
 
 Change password if needed:

@@ -1,13 +1,6 @@
 # Setup local environment for frontend app
 
-# Table of contents
-1. [Task description](#task)
-2. [Install Angular on macOS](#angular_macos)
-3. [Angular frontend for Spring Petclinic](#spring_petclinic)
-4. [Build Lifecycle](#build_lifecycle)
-
-
-## Task <a name="task"></a>
+## Task 
 Clone [spring-petclinic-angular](https://github.com/spring-petclinic/spring-petclinic-angular) repo and setup local development environment. Build the app using instructions in repo’s README.md. Make sure to understand build lifecycle and build artefacts.
 
 ## How To Install Angular on macOS <a name="angular_macos"></a>
@@ -17,12 +10,12 @@ Clone [spring-petclinic-angular](https://github.com/spring-petclinic/spring-petc
 
 [Official Node.js website](https://nodejs.org/en)
 
-Install Node.js and npm via brew:
+Install `Node.js` and `npm` via `homebrew`:
 ```
 brew install node
 ```
 
-Check your current Node and npm versions:
+Check your current `Node` and `npm` versions:
 ```
 $ node -v 
 $ npm -v
@@ -30,7 +23,7 @@ $ npm -v
 
 **2. Install Angular CLI Globally**
 
-Just as with the Windows instructions, you need to next install/update Angular CLI, which is what you need to create (and manage) Angular applications. To do this, open the Terminal and run the following commands:
+Just as with the Windows instructions, you need to next install/update `Angular CLI`, which is what you need to create (and manage) Angular applications. To do this, open the Terminal and run the following commands:
 
 ```
 npm uninstall -g angular-cli @angular/cli
@@ -38,6 +31,7 @@ npm cache verify
 npm cache clean --force #if needed
 npm install -g @angular/cli@latest 
 ```
+
 <details>
   <summary>Error</summary>
 
@@ -65,29 +59,27 @@ npm ERR! the command again as root/Administrator.
 ```
 </details>
 
-Solution for the error above:
-
-Set the directory owner of /usr/local/lib/node_modules/ to root. Execute below command to set the owner to your user and after that repeat steps for installation Angular CLI Globally:
+Solution for the error above is to set the directory owner of `/usr/local/lib/node_modules/` to  your user and after that repeat steps for installation Angular CLI Globally. Execute the following command:
 ```
 $ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}`
 ```
 
 **3. Test Angular Installed Correctly**  
-After installing the Angular CLI, you can utilize its commands for managing Angular projects. To confirm a successful installation, run the subsequent command in the Terminal:
+After installing the `Angular CLI`, you can utilize its commands for managing `Angular` projects. To confirm a successful installation, run the subsequent command in the Terminal:
 ```
 ng --version
 ```
-You should see the version of Angular CLI displayed.
+You should see the version of `Angular CLI` displayed.
 
-Possible error for the command above: You need to specify a command before moving on. Use '--help' to view the available commands.
-
-Correct command:
+Possible error for the command above: `You need to specify a command before moving on. Use '--help' to view the available commands.` Use following command:
 ```
 ng version
 ```
 
-## Angular frontend for Spring Petclinic <a name="spring_petclinic"></a>
-Warning: **client only**. Use REST API from backend [spring-petclinic-rest](https://github.com/spring-petclinic/spring-petclinic-rest) project. You need start backend server before start frontend application.
+## Angular frontend for Spring Petclinic
+
+> **Warning**
+> Warning: **client only**. Use REST API from backend [spring-petclinic-rest](https://github.com/spring-petclinic/spring-petclinic-rest) project. You need start backend server before start frontend application.
 
 **Clone project from github:**
 
@@ -99,19 +91,21 @@ git clone https://github.com/spring-petclinic/spring-petclinic-angular.git
 
 ```
 npm install --save-dev @angular/cli@latest
-if npm version > 5.0 delete package-lock.json file  #(bug in npm 5.0 - this file prevent correct packages install)
+if npm version > 5.0 delete package-lock.json file  (bug in npm 5.0 - this file prevent correct packages install)
 npm install
 ```
-You can see current dependencies in package.json file.
+You can see current dependencies in `package.json` file.
 
 **Development server**
 
 Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
-![Angular](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/1925ed42c33d374c149dfcbdd3b03d1fb170456b/03-setup-local-env-frontend/screenshot_angular.png)
+![Angular](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/develop/03-setup-local-env-frontend/screenshot_angular.png)
+<p align="right">
+<sub>(Web app preview)</sub>
+</p>
 
-
-# Build Lifecycle <a name="build_lifecycle"></a>
+# Build Lifecycle 🔴
 
 Angular deployment guide is available [here](https://angular.io/guide/deployment#simple-deployment-options) with following chapters: 
 - Simple deployment options

@@ -10,15 +10,19 @@ Fork/clone [frontend](https://github.com/spring-petclinic/spring-petclinic-angul
 - [What Is an Environment Variable?](https://kinsta.com/knowledgebase/what-is-an-environment-variable/)
 - [An Introduction to Environment Variables and How to Use Them](https://medium.com/chingu/an-introduction-to-environment-variables-and-how-to-use-them-f602f66d15fa)
 
+Environment variables are predetermined values that are typically used to provide the ability to configure a value in your code from outside of your application.
+
 Environment variables are variables available to your program/application dynamically during runtime. The value of these variables can come from a range of sources — text files, third-party secret managers, calling scripts, etc.
 
 An environment variable is made up of a name/value pair, and any number may be created and available for reference at a point in time. Value of these environment variables is not hardcoded in your program. These are truly dynamic and can be changed based on the environment that your program is running in.
 
 ## Types of environment variables
 
-1. **System Environment Variables** - reside on the topmost root of the system and are the same for all processes running in a system under all the user profiles of the system. Your operating system/system administrator usually sets these, and you’re rarely required to fiddle with them. One of the most common uses of a system environment variable is setting up a PATH variable to a global package/library to be used by all users in the system.
-2. **User Environment Variables** - those that are local to a user profile in Windows systems. These variables are used to store user-specific information such as the path to a local installation of libraries that are not to be used by all users, values specific to programs installed only for specific users, etc.
+1. **System Environment Variables** - reside on the topmost root of the system and are the same for all processes running in a system under all the user profiles of the system. Your operating system/system administrator usually sets these, and you’re rarely required to fiddle with them. One of the most common uses of a system environment variable is setting up a `PATH` variable to a global package/library to be used by all users in the system.
+2. **User Environment Variables** - those that are local to a user profile in Windows systems or another OS. These variables are used to store user-specific information such as the path to a local installation of libraries that are not to be used by all users, values specific to programs installed only for specific users, etc.
 3. **Runtime/Process Environment Variables** - further narrowed down only to the runtime or the process that they are associated with. These are usually set by the parent process that creates the new process and is accompanied by the system and user environment variables as well. You can use terminal scripting to create and store these variables on the fly. Runtime variables are usually not permanent unless scripted, and you need to define them whenever you start a new process.
+
+**In this task, we need to use `Runtime/Process Environment Variables`.**
 
 ## Why should we use environment variables?
 
@@ -34,13 +38,13 @@ Use cases for environment variables include but are not limited to data such as:
 - Group mail addresses, such as those for marketing, support, sales, etc.
 - Service account names
 
-## 'environment.ts' in Angular
+## Frontend: `environment.ts`
 
 [Building and serving Angular apps](https://angular.io/guide/build)
 
-The project's src/environments/environment.ts is a common place where you keep your application settings. You can override default values for additional environments, such as development and staging, in target-specific configuration files.
+The project's `src/environments/environment.ts` is a common place where you keep your application settings. You can override default values for additional environments, such as `development` and `staging`, in target-specific configuration files.
 
-Default environment configuration contains variable 'production' which is mandatory.
+Default environment configuration contains variable `production` which is mandatory.
 ```typescript
 export const environment = {
   production: false
@@ -66,11 +70,11 @@ import {environment} from '../../environments/environment';
 private entityUrl = environment.REST_API_URL + 'pets';
 ```
 
-## .env files (backend)
+## Backend: `.env` files
 
-The recommended method for most applications is to save .env file at the root of your project, but include them in your .gitignore file in order to avoid them from being committed to your main repo (one .env file corresponds to each device/environment). The idea here is simple: you store your environment variables in a file named .env at the root of your project. The application queries for the variables in this file and loads them for use during runtime.
+The recommended method for most applications is to save `.env` file at the root of your project, but include them in your `.gitignore` file in order to avoid them from being committed to your main repo (one `.env` file corresponds to each device/environment). The idea here is simple: you store your environment variables in a file named `.env` at the root of your project. The application queries for the variables in this file and loads them for use during runtime.
 
-.env files store your app secrets in the form of key-value pairs. The usual format for storing environment variables in a .env file is:
+`.env` files store your app secrets in the form of key-value pairs. The usual format for storing environment variables in a `.env` file is:
 ```
 Key1=Value1
 Key2=Value2
@@ -93,28 +97,28 @@ spring.datasource.username=${USERNAME}
 spring.datasource.password=${PASSWORD}
 ```
 
-## .gitignore
+## `.gitignore`
 
-It is necessary to add .env to gitignore and commit change to your repository
+It is necessary to add `.env` to `.gitignore` and commit change to your repository:
 ```
 # Local configuration, environment variables file
 .env
 ```
 
-## Different ways to use .env file
+## Different ways to use `.env` file
 
-These are some of the ways to use .env file:
+Here are various approaches for effectively integrating and using an .env file:
 
-### spring.config.import
+### `spring.config.import`
 
 Add this to your application-postgresql.properties or another .properties file:
 `spring.config.import=optional:file:.env[.properties]`
 
-The [.properties] is a hint for spring which translates to “Use this file without an extension as a .properties file.”
+The `[.properties]` is a hint for spring which translates to `Use this file without an extension as a .properties file`.
 
-### Use @PropertySource
+### Use `@PropertySource`
 
-Import PropertySource and add `@PropertySource("file:.env")` to PetClinicApplication.java file.
+Import `PropertySource` and add `@PropertySource("file:.env")` to `PetClinicApplication.java` file.
 ```java
 //PetClinicApplication.java
 import org.springframework.context.annotation.PropertySource;
@@ -124,9 +128,9 @@ import org.springframework.context.annotation.PropertySource;
 public class PetClinicApplication extends SpringBootServletInitializer { }
 ```
 
-### Use spring-dotenv library
+### Use `spring-dotenv` library
 
-Use an additional library that adds support for this, such as [spring-dotenv](https://github.com/paulschwarz/spring-dotenv). Check the [current version](https://central.sonatype.com/artifact/me.paulschwarz/spring-dotenv?smo=true). For Maven, add dependency to 'pom.xml' file:
+Use an additional library that adds support for this, such as [spring-dotenv](https://github.com/paulschwarz/spring-dotenv). Check the [current version](https://central.sonatype.com/artifact/me.paulschwarz/spring-dotenv?smo=true). For Maven, add dependency to `pom.xml` file:
 ```xml
 //pom.xml
 <dependency>
