@@ -1,12 +1,12 @@
 <h1 align="center">Atlantbh DevOps Internship</h1>
 
-![adinpilavdzija-devops-github](🔴)
+![adinpilavdzija-devops-github](https://github.com/adinpilavdzija/devops-internship-atlantbh/assets/65655945/8d7b8220-3822-48bb-ad02-c1c439943d45)
 
 During `ABH Internship`, interns work on a project with one-on-one mentorship from an Atlantbh engineer. The DevOps Engineer intern will work on raising the application quality as well as the development of tools and practices needed for the successful release of your application to production. By the end of the internship, the intern will be acquainted with the tools necessary for setting up and managing Continuous Integration and automated deployment processes (bash scripting/Docker/Kubernetes/Jenkins), as well as cloud computing infrastructure management (Amazon Web Services).
 
 The repository encompasses the main `README.md` file, individual task folders with their corresponding `README.md` files, and possibly accompanying screenshots or other files. Additionally, it includes the main application separated in two folders, namely `spring-petclinic-angular` and `spring-petclinic-rest`. Each `README.md` file within the task folders provides overview and comprehensive instructions for completing the associated task.
 
-<img name="devops-forthebadge" src="🔴" align="right" />
+<img name="devops-forthebadge" src="https://github.com/adinpilavdzija/devops-internship-atlantbh/assets/65655945/41e74e48-5c09-4a4a-9be8-3cc3f34383f8" align="right" />
 
 >**Note** 
 MacOS: Ventura 13.3  
