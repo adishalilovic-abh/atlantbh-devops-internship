@@ -9,5 +9,6 @@ RUN npm run build
 # Stage 2
 FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=build /app/dist/ /usr/share/nginx/html/petclinic
+COPY default.conf /etc/nginx/conf.d/
+COPY --from=build /app/dist/ /usr/share/nginx/html/petclinic/
 EXPOSE 80
