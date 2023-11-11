@@ -15,7 +15,13 @@ Task:
 
 <details>
 <summary>Screenshots of task completion</summary>
-🔴
+	
+![1](screenshots/01_images.png)
+![2](screenshots/02_containers.png)
+![3](screenshots/03_network.png)
+![4](screenshots/04_network_inspect.png)
+![5](screenshots/05_volume.png)
+![6](screenshots/06_volume_inspect.png)
 </details>
 
 ## Docker cheatsheet
@@ -33,8 +39,9 @@ $ docker exec -it container-name sh
 <details>
 <summary>Cheatsheets</summary>
 	
-🔴 
-
+![1](../resources/docker_cheatsheet.png)
+![2](../resources/docker_cheatsheet_2.png)
+![3](../resources/docker_cheatsheet_3.webp)
 </details>
 
 ## Resources
@@ -46,15 +53,18 @@ $ docker exec -it container-name sh
 ## Docker
 
 <p align="center">
-  <img src="https://github.com/adinpilavdzija/nesto/assets/65655945/e4f5201c-2aa7-4613-b969-b459d96a2bb0" />
+  <img src="../resources/docker_logo.png" />
 </p>
 
 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker's methodologies for shipping, testing, and deploying code, you can significantly reduce the delay between writing code and running it in production.
 
 Docker provides the ability to package and run an application in a loosely isolated environment called a container. The isolation and security lets you to run many containers simultaneously on a given host. Containers are lightweight and contain everything needed to run the application, so you don't need to rely on what's installed on the host. You can share containers while you work, and be sure that everyone you share with gets the same container that works in the same way. The primary benefits of Docker are speed, consistency, density, and portability.
 
-🔴 docker architecture 
-🔴 dockerfile_image_container
+Docker architecture:  
+![docker architecture](../resources/docker_architecture.png)
+
+Dockerfile -> Image -> Container:
+![dockerfile_image_container](../resources/dockerfile_image_container.png)
 
 - **Docker Client** is a component used by a Docker user to interact with the Docker daemon and issue commands. These commands are based on the Docker API.
 - **Docker Daemon** runs on a host machine and manages containers, images, networks, and volumes. It receives commands from the Docker client and executes them. The Docker daemon uses Docker images to create containers.
@@ -70,7 +80,7 @@ Docker provides the ability to package and run an application in a loosely isola
 
 ## Docker vs Virtual Machines
 
-🔴
+![1](../resources/vm_vs_containers.png)
 
 ## Create Docker network for spring petclinic containers <a name="network"></a>
 
@@ -99,7 +109,7 @@ docker run -d -p 5432:5432 --network petclinic_network -v psql-db:/var/lib/postg
 
 ## Create Database Dockerfile and build docker image <a name="database"></a>
 
-[Database Dockerfile]() 🔴
+[Database Dockerfile](../postgres/Dockerfile) 
 
 Use following commands to build image and run container:
 ```
@@ -115,7 +125,7 @@ Update the `datasource.url` in `application.properties` file or `.env` file. We 
 `spring.datasource.url=jdbc:postgresql://localhost:5432/petclinic`
 `spring.datasource.url=jdbc:postgresql://172.18.0.2:5432/petclinic`
 
-[Backend Dockerfile]() 🔴
+[Backend Dockerfile](../spring-petclinic-rest/Dockerfile)
 
 <details>
 <summary>Error</summary>
@@ -144,18 +154,20 @@ $ docker run --env-file .env -d -p 9966:9966 --network petclinic-network --name 
 
 ### Size comparison of docker images
 
-Size comparison of docker images based on image used in second stage of [Backend Docker File](🔴):
-🔴
-```
-# Stage 2
-467MB: eclipse-temurin:17
-375MB: eclipse-temurin:17-alpine
-237MB: eclipse-temurin:17-jre-alpine
-```
+Size comparison of docker images based on image used in second stage of [Backend Docker File](../spring-petclinic-rest/Dockerfile):
+- 467MB: eclipse-temurin:17
+- 375MB: eclipse-temurin:17-alpine
+- 237MB: eclipse-temurin:17-jre-alpine
+
+<details>
+<summary>Chart</summary>
+ 
+![1](../resources/docker_images_compare.png)
+</details>
 
 ## Create Frontend Dockerfile and build docker image <a name="frontend"></a>
 
-[Frontend Dockerfile]() 🔴
+[Frontend Dockerfile](../spring-petclinic-angular/Dockerfile)
 
 Create `default.conf` file for nginx configuration and use it in Dockerfile: 
 ```
@@ -183,7 +195,13 @@ As previously mentioned, it is important to highlight the significance of config
 
 <details>
 <summary>Screenshots</summary>
-🔴
+
+![1](screenshots/07_frontend_post.png)
+![2](screenshots/08_backend_get.png)
+![3](screenshots/09_backend_post.png)
+![4](screenshots/10_status_code.png)
+![5](screenshots/11_psql_select.png)
+![6](screenshots/12_frontend_get.png)
 </details>
 
 ## Push docker images to docker hub <a name="push"></a>
@@ -232,6 +250,3 @@ docker pull adinpilavdzija/petclinic-angular:1.0
 - **Scan Your Images for Security Vulnerabilities**: Use container scanning tools like Clair, Trivy, or Docker Security Scanning to regularly scan your Docker images for known vulnerabilities. This helps you identify and mitigate security risks in your containers.
 
 Discover more best practices on this [link](https://sysdig.com/blog/dockerfile-best-practices/).
-
-
-
