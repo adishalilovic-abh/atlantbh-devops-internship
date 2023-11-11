@@ -13,4 +13,5 @@ springboot-petclinic-client/
 springboot-petclinic-server/
 
 # Local configuration, environment variables file
-.env
+#.env
+#NOT RECOMMENDED: It is not best practice to have environment variables on GitHub
