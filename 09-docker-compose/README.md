@@ -2,7 +2,7 @@
 
 ## Task
 
-Task: Create docker-compose file for spring petclinic app -> []()🔴
+Task: Create docker-compose file for spring petclinic app -> [docker-compose.yml](../docker-compose.yml)
 
 ## Resources
 
@@ -13,7 +13,7 @@ Task: Create docker-compose file for spring petclinic app -> []()🔴
 
 ## Docker-compose cheatsheet 
 
-🔴
+![2](../resources/docker_compose_commands.jpg)
 
 ## Docker-compose
 
@@ -21,7 +21,7 @@ Task: Create docker-compose file for spring petclinic app -> []()🔴
 
 The big advantage of using Compose is you can define your application stack in a file, keep it at the root of your project repository (it's now version controlled), and easily enable someone else to contribute to your project. Someone would only need to clone your repository and start the app using Compose.
 
-Using Docker Compose is a three-step process:
+Using Docker Compose is a **three-step process**:
 1. Define your app's environment with a `Dockerfile` so it can be reproduced anywhere.
 2. Define the services that make up your app in `docker-compose.yml` so they can be run together in an isolated environment.
 3. Run `docker compose up` and Compose will start and run your entire app.
@@ -54,8 +54,8 @@ Useful tools are [YAML Cheat Sheet & Quick Reference](https://quickref.me/yaml.h
 
 ## Docker Compose file structure
 
-🔴
-
+![1](../resources/docker_compose_cheat_sheet.png)
+  
 Docker Compose files work by applying multiple commands or keywords that are declared within a single `docker-compose.yml` configuration file. Some of the keywords:
 - `version ‘3’`: This denotes that we are using version 3 of Docker Compose, and Docker will provide the appropriate features. At the time of writing this article, version 3.7 is latest version of Compose.
 - `services`: This section defines all the different containers we will create.
