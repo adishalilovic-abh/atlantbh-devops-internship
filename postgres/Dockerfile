@@ -1,4 +1,4 @@
 FROM postgres:16-alpine
-ENV POSTGRES_PASSWORD=petclinic
-ENV POSTGRES_DB=petclinic
+ARG POSTGRES_PASSWORD=petclinic
+ARG POSTGRES_DB=petclinic
 EXPOSE 5432

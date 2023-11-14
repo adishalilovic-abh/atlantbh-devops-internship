@@ -92,7 +92,7 @@ docker network create petclinic-network
 
 Docker automatically assign a subnet (`172.18.0.0/16`) and gateway (`172.18.0.1`) to the network if not specified. 
 
-Use `--network petclinic_network` with `run` command when creating a container or connect a running container to a network with `docker network connect multi-host-network container1`. For example: `docker network connect petclinic_network petclinic-rest`
+Use `--network petclinic-network` with `run` command when creating a container or connect a running container to a network with `docker network connect multi-host-network container1`. For example: `docker network connect petclinic-network petclinic-rest`
 
 ## Add volume to PostgreSQL docker container <a name="volume"></a>
 
@@ -104,7 +104,7 @@ We can configure host volumes at the service level, and named volumes in the out
 
 It is not required to first create volume: `docker volume create [OPTIONS] [VOLUME]`. You can also specify e.g. `-v psql-db:/var/lib/postgresql/data` it in `docker run` command:
 ```
-docker run -d -p 5432:5432 --network petclinic_network -v psql-db:/var/lib/postgresql/data --name petclinic-postgres petclinic-postgres
+docker run -d -p 5432:5432 --network petclinic-network -v psql-db:/var/lib/postgresql/data --name petclinic-postgres petclinic-postgres
 ```
 
 ## Create Database Dockerfile and build docker image <a name="database"></a>
