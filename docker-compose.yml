@@ -20,13 +20,15 @@ services:
     image: petclinic-rest
     depends_on:
       - petclinic-postgres
+    environment: 
+      POSTGRES_JDBC_URL: jdbc:postgresql://petclinic-postgres:5432/petclinic
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: petclinic
     ports:
       - "9966:9966"
     networks:
       - petclinic-network
     container_name: petclinic-rest
-    env_file:
-      - ./spring-petclinic-rest/.env
 
   petclinic-angular:
     build:
