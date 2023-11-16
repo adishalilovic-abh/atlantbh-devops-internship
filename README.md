@@ -8,10 +8,10 @@ The repository encompasses the main `README.md` file, individual task folders wi
 
 <img name="devops-forthebadge" src="https://github.com/adinpilavdzija/devops-internship-atlantbh/assets/65655945/41e74e48-5c09-4a4a-9be8-3cc3f34383f8" align="right" />
 
->**Note** 
-MacOS: Ventura 13.3  
-Start date: October 9, 2023  
-End date: 🔴
+> [!NOTE]
+> MacOS: Ventura 13.3
+> Start date: October 9, 2023  
+> End date: 🔴
 
 <p align="left">
     <img src="https://skillicons.dev/icons?i=git,github,bash,vim,vscode,java,maven,angular,postgres,docker"/>
@@ -50,7 +50,7 @@ $ brew list #to see a list of all the packages you've installed
 
 [`spring-petclinic-angular`](https://github.com/spring-petclinic/spring-petclinic-angular) is the Angular frontend application which consumes the REST API. The repository contains a [cloned version with the incorporated changes](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/spring-petclinic-angular).
 
-> **Warning**
+> [!Warning]
 > Client only. Use REST API from backend spring-petclinic-rest project. You need to start backend server before you start frontend application.
 
 ## First month
@@ -58,7 +58,7 @@ $ brew list #to see a list of all the packages you've installed
 <details>
   <summary></summary>
 
-### 00 Setup Linux VM
+### Prerequisite: Setup Linux VM
 
 Linux based OS is mandatory for DevOps internship program. Disposable Virtual Machine (VM) needs to be created for learning purpose and potentially for future tasks. Any Linux based OS is acceptable. Graphical User Interface (GUI) is optional, but not needed.
 
@@ -112,7 +112,7 @@ Task: Variables like hostname, username and password often need to be changed. C
 [Add `.gitignore`](https://github.com/adinpilavdzija/devops-internship-atlantbh/commit/29a79bcb458f4aac729b0d80a7ae8cfb54ab0456)<br>
 [Code changes](https://github.com/adinpilavdzija/devops-internship-atlantbh/commit/1f9b95c1855c840c8637bc02ae78911041f3fe9c)
 
-### 08 Dockerize Frontend, Backend and Postgres services
+### [08 Dockerize Frontend, Backend and Postgres services](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/08-docker)
 
 Task:
 - Create Backend Dockerfile and build docker image
@@ -123,17 +123,15 @@ Task:
 - Add volume to PostgreSQL docker container
 - Create Docker network for spring petclinic containers
 
-[]()
-
-### 09 Create docker-compose file for spring petclinic app
+### [09 Create docker-compose file for spring petclinic app](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/09-docker-compose)
 
 Task: Create docker-compose file for spring petclinic app
-
-[]()
 
 </details>
 
 ## Second month
+
+## Third month
 
 <p align="center">
     🔵⚪⚫
