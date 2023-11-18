@@ -29,7 +29,7 @@ spring.profiles.active=hsqldb,spring-data-jpa
 spring.profiles.active=postgresql,spring-data-jpa
 ```
 
- > **Note**
+ > [!TIP]
  > `src/main/resources/application.properties`
 
 Before you do this, it would be good to check properties defined in `application-postgresql.properties` file.
