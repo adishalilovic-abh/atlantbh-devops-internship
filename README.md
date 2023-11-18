@@ -50,7 +50,7 @@ $ brew upgrade #to upgrade packages
 $ brew list #to see a list of all the packages you've installed
 ```
 
-## [spring-petclinic-deployment](00-spring-petclinic-deployment/)
+## [spring-petclinic-deployment](/00-spring-petclinic-deployment/)
 
 `00-spring-petclinic-deployment` directory contains cloned versions of both the application's frontend and backend which are updated versions resulting from completed tasks:
 - `spring-petclinic-rest` [(Original Repository)](https://github.com/spring-petclinic/spring-petclinic-rest) is the backend version of the Spring Petclinic application provides a REST API. 
@@ -79,7 +79,7 @@ Recommended OS:
 - CentOS
 - Any other Linux based distribution (check DistroWatch)
 
-### [01 Bash scripting](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/01-bash-scripting)
+### [01 Bash scripting](/01-bash-scripting/)
 
 Task:
 - 01 Write a script that gets CPU and Memory usage
@@ -88,34 +88,34 @@ Task:
 - 04 Write a script that traces the path of a network packet from the source to a destination
 - 05 Write a script that tests the DNS resolution time for a list of domains
 
-### [02 Setup local environment for backend app](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/02-setup-local-env-backend)
+### [02 Setup local environment for backend app](/02-setup-local-env-backend/)
 
 Task: Clone spring-petclinic-rest repo and setup local development environment. Build the app using instructions in repo’s README.md. Make sure to understand build lifecycle and build artefacts.
 
-### [03 Setup local environment for frontend app](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/03-setup-local-env-frontend)
+### [03 Setup local environment for frontend app](/03-setup-local-env-frontend/)
 
 Task: Clone spring-petclinic-angular repo and setup local development environment. Build the app using instructions in repo’s README.md. Make sure to understand build lifecycle and build artefacts.
 
-### [04 Deploy functional Spring Petclinic App](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/04-deploy-functional-app)
+### [04 Deploy functional Spring Petclinic App](/04-deploy-functional-app/)
 
 Task: Deploy both frontend and backend spring-petclinic apps. Verify the frontend app is integrated with backend.
 
-### [05 Setup PostgreSQL database](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/05-setup-postgresql-db)
+### [05 Setup PostgreSQL database](/05-setup-postgresql-db/)
 
 Task: Spring petclinic rest app uses in memory storage by default. There is option to persist data beyond restarts using database. Create local PostgreSQL database which will be used for data persistence.
 
-### [06 Deploy Backend with PostgreSQL integration](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/06-backend-postgresql-integration)
+### [06 Deploy Backend with PostgreSQL integration](/06-backend-postgresql-integration/)
 
 Task: Deploy Backend with PostgreSQL integration.
 
-### [07 Reconfigure Frontend and Backend apps to use environment variables](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/07-environment-variables)
+### [07 Reconfigure Frontend and Backend apps to use environment variables](/07-environment-variables/)
 
 Task: Variables like hostname, username and password often need to be changed. Configure frontend and backend apps to use environment variables for REST_API_URL, Postgres datasource.url, username and password. Fork/clone frontend and backend repositories and make changes (including changes in future tasks) in these repositories.
 
 [Add `.gitignore`](https://github.com/adinpilavdzija/devops-internship-atlantbh/commit/29a79bcb458f4aac729b0d80a7ae8cfb54ab0456)<br>
 [Code changes](https://github.com/adinpilavdzija/devops-internship-atlantbh/commit/1f9b95c1855c840c8637bc02ae78911041f3fe9c)
 
-### [08 Dockerize Frontend, Backend and Postgres services](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/08-docker)
+### [08 Dockerize Frontend, Backend and Postgres services](/08-docker/)
 
 Task:
 - Create Backend Dockerfile and build docker image
@@ -126,7 +126,7 @@ Task:
 - Add volume to PostgreSQL docker container
 - Create Docker network for spring petclinic containers
 
-### [09 Create docker-compose file for spring petclinic app](https://github.com/adinpilavdzija/devops-internship-atlantbh/tree/develop/09-docker-compose)
+### [09 Create docker-compose file for spring petclinic app](/09-docker-compose/)
 
 Task: Create docker-compose file for spring petclinic app.
 
