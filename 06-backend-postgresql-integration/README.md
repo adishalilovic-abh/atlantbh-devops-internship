@@ -29,7 +29,7 @@ spring.profiles.active=hsqldb,spring-data-jpa
 spring.profiles.active=postgresql,spring-data-jpa
 ```
 
- > **Note**
+ > [!TIP]
  > `src/main/resources/application.properties`
 
 Before you do this, it would be good to check properties defined in `application-postgresql.properties` file.
@@ -68,15 +68,15 @@ The ddl-auto property sets the behavior of Hibernate’s schema generation tool 
 <summary>Screenshots</summary>
 
 Select query in psql on table `specialties`:  
-![01](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/01_screenshot_db_select_before.png)
+![01](/06-backend-postgresql-integration/01_screenshot_db_select_before.png)
 
 Executed POST method in Swagger:  
-![02](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/02_screenshot_post_1.png)
-![03](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/03_screenshot_post_2.png)
+![02](/06-backend-postgresql-integration/02_screenshot_post_1.png)
+![03](/06-backend-postgresql-integration/03_screenshot_post_2.png)
 
 Status code after manipulation of data:  
-![04](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/04_screenshot_post_status_code.png)
+![04](/06-backend-postgresql-integration/04_screenshot_post_status_code.png)
 
 Select query in psql on table `specialties` after manipulation of data:  
-![05](https://github.com/adinpilavdzija/devops-internship-atlantbh/blob/283e88c3667e40917290fc13a46a38b69f18697e/06_backend_postgresql_integration/05_screenshot_db_select_after.png)
+![05](/06-backend-postgresql-integration/05_screenshot_db_select_after.png)
 </details>
