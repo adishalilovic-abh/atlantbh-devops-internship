@@ -20,6 +20,7 @@ jobs:
 
   build-be:
     runs-on: ubuntu-latest
+    needs: login
     steps:
     - uses: actions/checkout@v3
     - uses: docker/build-push-action@v3
@@ -33,6 +34,7 @@ jobs:
 
   build-fe:
     runs-on: ubuntu-latest
+    needs: login
     steps:
     - uses: actions/checkout@v3
     - uses: docker/build-push-action@v3
