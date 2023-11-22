@@ -8,10 +8,8 @@ on:
 
 jobs:
 
-  build:
-
+  build-be:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - uses: docker/build-push-action@v3
@@ -20,5 +18,18 @@ jobs:
         file: ./00-spring-petclinic-deployment/spring-petclinic-rest/Dockerfile
         push: true
         tags: |
-            spring-petclinic-rest:${{ github.sha }}
-            spring-petclinic-rest:latest
+            hllvc/spring-petclinic-rest:${{ github.sha }}
+            hllvc/spring-petclinic-rest:latest
+
+  build-fe:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: docker/build-push-action@v3
+      with:
+        context: ./00-spring-petclinic-deployment/spring-petclinic-angular
+        file: ./00-spring-petclinic-deployment/spring-petclinic-angular/Dockerfile
+        push: true
+        tags: |
+            hllvc/spring-petclinic-angular:${{ github.sha }}
+            hllvc/spring-petclinic-angular:latest
